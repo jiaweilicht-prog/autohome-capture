@@ -1,0 +1,5 @@
+open_clip_torch
+torch>=2.0
+numpy
+pillow
+requests
