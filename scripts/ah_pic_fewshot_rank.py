@@ -25,6 +25,13 @@ def main():
     ap.add_argument('--outdir', default='output/clip_rank6')
     ap.add_argument('--topk', type=int, default=3)
     ap.add_argument('--lam', type=float, default=0.6)
+    ap.add_argument('--pos', default='output/fewshot/positives.csv', help='正样本池')
+    ap.add_argument('--neg', default='output/fewshot/negatives.csv', help='负样本池')
+    ap.add_argument('--cache-img', default='output/clip_rank3/emb_cache.npz', help='整图嵌入缓存')
+    ap.add_argument('--cache-depth', default='output/clip_rank5/reg_depth.npz', help='三带嵌入缓存')
+    ap.add_argument('--cands', default='output/clip_rank5/clip_ranked_filtered.csv', help='候选主表')
+    ap.add_argument('--extra', default='output/clip_rank5/extra_rows.csv', help='补抓候选（可选）')
+    ap.add_argument('--refs', default=','.join(REF_EXTRA), help='额外参考图，逗号分隔')
     a = ap.parse_args()
     os.makedirs(a.outdir, exist_ok=True)
     model, _, pre = open_clip.create_model_and_transforms(
@@ -56,20 +63,21 @@ def main():
                 out[b].append(emb_imgs([crop_band(im, BANDS[b]) for im in ims]))
         return {k: np.concatenate(v) for k, v in out.items()}
 
-    pos_rows = list(csv.DictReader(open('output/fewshot/positives.csv', encoding='utf-8')))
-    neg_rows = list(csv.DictReader(open('output/fewshot/negatives.csv', encoding='utf-8')))
-    pos_paths = [r['local'] for r in pos_rows] + REF_EXTRA
-    neg_paths = [r['local'] for r in neg_rows]
+    pos_rows = list(csv.DictReader(open(a.pos, encoding='utf-8')))
+    neg_rows = list(csv.DictReader(open(a.neg, encoding='utf-8')))
+    refs = [p for p in a.refs.split(',') if p.strip()]
+    pos_paths = [r['local'] for r in pos_rows if r.get('local')] + refs
+    neg_paths = [r['local'] for r in neg_rows if r.get('local')]
     print(f'正样本 {len(pos_paths)} | 负样本 {len(neg_paths)}，嵌入中…', flush=True)
     P = embed_set(pos_paths)
     N = embed_set(neg_paths)
     print('标注图嵌入完成', flush=True)
 
     # 候选缓存（两个缓存路径顺序不同，用字典映射）
-    z = np.load('output/clip_rank3/emb_cache.npz', allow_pickle=True)
+    z = np.load(a.cache_img, allow_pickle=True)
     c_paths = list(z['paths'].tolist())
     C_img = np.stack(z['embs'])
-    z2 = np.load('output/clip_rank5/reg_depth.npz', allow_pickle=True)
+    z2 = np.load(a.cache_depth, allow_pickle=True)
     d_paths = list(z2['paths'].tolist())
     C_band = {b: np.stack(z2[b]) for b in BANDS}
     assert set(c_paths) == set(d_paths), '两个缓存候选集合不一致'
@@ -86,8 +94,8 @@ def main():
     pos_score = sum(W[k] * Sp[k] for k in W)
     neg_score = sum(W[k] * Sn[k] for k in W)
 
-    rows = list(csv.DictReader(open('output/clip_rank5/clip_ranked_filtered.csv', encoding='utf-8')))
-    extra_p = 'output/clip_rank5/extra_rows.csv'
+    rows = list(csv.DictReader(open(a.cands, encoding='utf-8')))
+    extra_p = a.extra
     if os.path.exists(extra_p):
         ex = list(csv.DictReader(open(extra_p, encoding='utf-8')))
         have = {r['cand'] for r in rows}

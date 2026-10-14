@@ -1,0 +1,21 @@
+﻿label,brand,series,sid,gid,file,source_url,origin
+pos,福特,探险者,5556,211,pos/POS_01_福特_探险者_gid211.jpg,https://car3.autoimg.cn/cardfs/product/g34/M06/A2/C0/autohomecar__ChxpV2pUoFeAS67sACZZabQAimE250.jpg,v11_pool
+pos,别克,别克E5,7043,31,pos/POS_02_别克_别克E5_gid31.jpg,https://car2.autoimg.cn/cardfs/product/g27/M04/4B/ED/autohomecar__CjIFVWhKqsOAbThpACv3jtltI20144.jpg,v11_pool
+pos,林肯,冒险家新能源,5386,93,pos/POS_03_林肯_冒险家新能源_gid93.jpg,https://car2.autoimg.cn/cardfs/product/g28/M09/A8/89/autohomecar__ChwFkmGMi6yASuLRACnXYJtuUNo447.jpg,v11_pool
+pos,福特,福特F-150猛禽,2353,160,pos/POS_04_福特_F-150猛禽_gid160.jpg,https://car3.autoimg.cn/cardfs/product/g27/M05/4E/B1/autohomecar__CjIFVWVW7ZiALiJbABg2AOqLTk4449.jpg,v11_pool
+pos,福特,福睿斯,3347,24,pos/POS_05_福特_福睿斯_gid24.jpg,https://car2.autoimg.cn/cardfs/product/g29/M05/FE/1B/autohomecar__ChwFk2BrxnCAMh0EAA9VvV4BFW4441.jpg,v11_pool
+pos,凯迪拉克,IQ锐歌,6404,39,pos/POS_06_凯迪拉克_IQ锐歌_gid39.jpg,https://car2.autoimg.cn/cardfs/product/g33/M06/65/6D/autohomecar__ChxpVWpPEGeASpV8ACgP5zcfcsk718.jpg,v11_pool
+pos,雪佛兰,科鲁兹,657,135,pos/POS_07_雪佛兰_科鲁兹_gid135.jpg,https://car3.autoimg.cn/cardfs/product/g3/M01/3B/B4/autohomecar__ChcCRV1_sHOADZ5mAAYAOZxqpUA905.jpg,v11_pool
+pos,Jeep,指南者,3845,123,pos/POS_08_Jeep_指南者_gid123.jpg,https://car2.autoimg.cn/cardfs/product/g16/M08/6D/67/autohomecar__ChsEzWDtROCAR_zLAB6SdytdTuQ019.jpg,v11_pool
+pos,克莱斯勒,大捷龙(进口),2207,50,pos/POS_09_克莱斯勒_大捷龙_gid50.jpg,https://car2.autoimg.cn/cardfs/product/g12/M13/3B/04/autohomecar__wKgH4lmQ-SuAaCR4AAVtiEYIPjQ008.jpg,v11_pool
+pos,道奇,Charger SRT,3049,52,pos/POS_10_道奇_ChargerSRT_gid52.jpg,https://car0.autoimg.cn/upload/spec/9421/201205211254264693796.jpg,v11_pool
+neg,福特,探险者,5556,174,neg/NEG_01_福特_探险者_gid174.jpg,https://car2.autoimg.cn/cardfs/product/g34/M0B/A0/07/autohomecar__ChtpWGpUoEOAa-bBACLkCKFmlJo118.jpg,早期标注
+neg,别克,别克E5,7043,81,neg/NEG_02_别克_别克E5_gid81.jpg,https://car3.autoimg.cn/cardfs/product/g31/M05/6C/99/autohomecar__ChxoHmh3RS2AVv2_ABk_s9uC5Pw897.jpg,A柱判据_降级
+neg,林肯,冒险家新能源,5386,39,neg/NEG_03_林肯_冒险家新能源_gid39.jpg,https://car2.autoimg.cn/cardfs/product/g5/M00/29/58/autohomecar__ChsF3WEtuFyAK1clABEO75TFUJM694.jpg,A柱判据_降级
+neg,福特,福特F-150猛禽,2353,135,neg/NEG_04_福特_F-150猛禽_gid135.jpg,https://car2.autoimg.cn/cardfs/product/g25/M00/A6/D1/autohomecar__ChxkqWVW7aKAW-HlABpaxpU8AgM955.jpg,早期标注
+neg,福特,福睿斯,3347,113,neg/NEG_05_福特_福睿斯_gid113.jpg,https://car3.autoimg.cn/cardfs/product/g4/M13/8D/BB/autohomecar__Chxkl2DlZCeAAshDABlynBcRjdQ948.jpg,A柱判据_降级
+neg,凯迪拉克,IQ锐歌,6404,20,neg/NEG_06_kadilake_IQ锐歌_gid20.jpg,https://car3.autoimg.cn/cardfs/product/g33/M06/65/6E/autohomecar__ChxpVmpPEHWAfwweACoDOAY75lI457.jpg,早期标注
+neg,雪佛兰,科鲁兹,657,166,neg/NEG_07_雪佛兰_科鲁兹_gid166.jpg,https://car2.autoimg.cn/cardfs/product/g28/M07/1E/F1/autohomecar__ChsEfVuWVPuAVYwSAAf34eKhhq4997.jpg,A柱判据_v2
+neg,Jeep,指南者,3845,67,neg/NEG_08_Jeep_指南者_gid67.jpg,https://car3.autoimg.cn/cardfs/product/g29/M06/15/F5/autohomecar__Chxkm2HVFtyAXyddABgs-QrCd3c049.jpg,早期标注
+neg,克莱斯勒,大捷龙(进口),2207,3,neg/NEG_09_克莱斯勒_大捷龙_gid3.jpg,https://car3.autoimg.cn/cardfs/product/g20/M08/10/D0/autohomecar__wKjBw1mQ-UmAVdvVAAaPAO7U0N4711.jpg,早期标注
+neg,道奇,Charger SRT,3049,22,neg/NEG_10_道奇_ChargerSRT_gid22.jpg,https://car0.autoimg.cn/upload/2014/8/14/2014081407415933326410.jpg,早期标注
