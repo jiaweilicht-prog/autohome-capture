@@ -23,6 +23,35 @@
 
 ---
 
+## 📋 新机器快速开始（备忘录 · 复制粘贴版）
+
+```bash
+# 1. 克隆仓库并进入目录
+git clone https://github.com/jiaweilicht-prog/autohome-capture.git && cd autohome-capture
+
+# 2. 创建独立虚拟环境并安装依赖（防止新电脑系统权限报错）
+python3 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+
+# 3. （可选）如果脚本用到了 Playwright，需补装浏览器驱动
+# playwright install chromium
+
+# 4. 运行校准样本抓取
+python scripts/fetch_seed_pool.py
+```
+
+补充说明：
+
+- **第 2 步最慢**：`requirements.txt` 含 `torch` / `open_clip_torch`，首次安装约 1~2GB，视网络需几分钟到十几分钟。
+  若只想先跑第 4 步拿校准样本，可只装轻量依赖 `pip install pillow requests numpy`
+  （`fetch_seed_pool.py` 只用标准库，不装依赖也能直接跑）。
+- **第 3 步非必需**：本仓库脚本不依赖 Playwright，只有自行扩展浏览器抓取时才需要。
+- **第 4 步成功标志**：输出 `完成: 成功 20 / 失败 0`，图片落在 `seed_pool/pos/` 与 `seed_pool/neg/`。
+  个别图若 404，改 `seed_pool/manifest.csv` 里的 `source_url` 后重跑即可（已下载的会自动跳过）。
+- 之后按下方「快速开始（冷启动）」继续：抓取 → 初排 → 判定节点 → 重排 → 收集。
+
+---
+
 ## 目录结构
 
 ```
